@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  --pale-blue: 225, 100%, 94%;
+  --bright-blue: 245, 75%, 52%;
+
+  --very-pale-blue: 225, 100%, 98%;
+  --desaturated-blue: 224, 23%, 55%;
+  --dark-blue: 223, 47%, 23%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Red Hat Display", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  min-height: 100vh;
+  background: hsl(var(--pale-blue)) url("images/pattern-background-desktop.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+  margin: 0;
+  text-align: center;
+  line-height: 1.4rem;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img,
+picture,
+figure {
+  width: 100%;
+}
+/****************** CARD ****************/
+.card {
+  --card-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  border-radius: var(--card-radius);
+  background: hsl(var(--very-pale-blue));
+  box-shadow: 0px 10px 10px hsla(var(--desaturated-blue), 10%);
+}
+
+.card .img {
+  border-top-left-radius: var(--card-radius) !important;
+  border-top-right-radius: var(--card-radius) !important;
+}
+
+.card .card-content {
+  padding: 40px 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .card-content > * {
+  margin-bottom: 20px;
+}
+
+.card .card-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.card h1 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: hsl(var(--dark-blue));
+}
+
+.card small {
+  color: hsl(var(--desaturated-blue));
+  font-weight: 500;
+}
+
+.card .plan {
+  background-color: hsla(var(--pale-blue), 0.5);
+  width: 100%;
+  border-radius: 10px;
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.card .plan .img-container {
+  margin-right: 15px;
+}
+
+.card .plan .text {
+  flex: auto;
+}
+
+.card .plan .text .up {
+  font-weight: 700;
+  color: hsl(var(--dark-blue));
+}
+
+.card .plan a {
+  color: hsl(var(--bright-blue));
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.card .plan a:active,
+.card .plan a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+.card .card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.card .card-actions button {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  border: none;
+  outline: none;
+  height: 2.5rem;
+  transition: all 0.2s ease;
+}
+
+.card .card-actions > *:last-child {
+  margin-bottom: 0;
+}
+
+.card .card-actions button.primary {
+  color: hsl(var(--very-pale-blue));
+  background-color: hsl(var(--bright-blue));
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 3px 8px 20px hsla(var(--bright-blue), 25%);
+  cursor: pointer;
+}
+
+.card .card-actions button.primary:active,
+.card .card-actions button.primary:hover {
+  opacity: 0.8;
+  box-shadow: 3px 8px 30px hsla(var(--bright-blue), 25%);
+}
+
+.card .card-actions button.cancel {
+  color: hsl(var(--desaturated-blue));
+  background-color: transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.card .card-actions button.cancel:active,
+.card .card-actions button.cancel:hover {
+  color: #000;
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 0 10px;
+    background: hsl(var(--pale-blue)) url("images/pattern-background-mobile.svg");
+  }
+  .card .card-content {
+    padding: 40px 30px 30px;
+  }
+  small {
+    font-size: 1.05rem;
+  }
+
+  .text small {
+    font-size: 0.9rem;
+  }
+  .card .card-actions button {
+    height: 3rem;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+}
